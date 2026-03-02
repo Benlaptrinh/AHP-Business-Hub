@@ -134,6 +134,10 @@ Detailed docs are available in `docs/`:
 
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
 
+## Security
+
+For vulnerability reports, please follow [SECURITY.md](./SECURITY.md) and report issues privately.
+
 ## License
 
 This project is currently for internal/portfolio use.
