@@ -6,8 +6,13 @@ on:
   pull_request:
     branches: ["main"]
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   frontend:
+    name: Frontend Checks
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -20,9 +25,11 @@ jobs:
           cache: npm
           cache-dependency-path: Frontend/package-lock.json
       - run: npm ci
+      - run: npm run lint
       - run: npm run build
 
   backend:
+    name: Backend Checks
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -35,4 +42,6 @@ jobs:
           cache: npm
           cache-dependency-path: Backend/package-lock.json
       - run: npm ci
+      - run: npm run lint
+      - run: npm run test -- --runInBand
       - run: npm run build
