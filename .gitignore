@@ -1,0 +1,18 @@
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Environment
+**/.env
+**/.env.local
+
+# Node artifacts
+**/node_modules/
+**/.next/
+**/dist/
+**/build/
+**/coverage/
+
+# Logs
+**/*.log
